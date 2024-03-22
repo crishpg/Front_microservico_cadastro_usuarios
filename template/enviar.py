@@ -1,8 +1,9 @@
 import pika
 
 # Conexão com o RabbitMQ
+credentials = pika.PlainCredentials('username','password')
 connection = pika.BlockingConnection(
-    pika.ConnectionParameters(host='localhost', port=5672)
+    pika.ConnectionParameters(host='localhost',credentials=credentials, port=5672)
 )
 channel = connection.channel()
 
