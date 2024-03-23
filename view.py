@@ -5,6 +5,7 @@ import pika
 app = Flask(__name__)
 
 
+
 @app.route('/', methods=['POST','GET'])
 def index():
     if request.method == 'POST':
@@ -15,7 +16,7 @@ def index():
      print(Nome)
 #tranformando os valores texto para json
      json_username = username
-     json_email =  Nome     
+     json_email =  Nome            
      payload = json.dumps({"username": json_username, "email":json_email }, indent=4)
      headers = { 'Content-Type': 'application/json'}
    
